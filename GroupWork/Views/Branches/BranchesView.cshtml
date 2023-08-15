@@ -1,0 +1,43 @@
+﻿@page
+@model BranchesModel
+@{
+    ViewData["Title"] = "Company Branches";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var branch in Model.branch) <!-- Use Model.Branches here -->
+        {
+            <tr>
+                <td>@branch.Id</td>
+                <td>@branch.Name</td>
+                <td>@branch.CityId</td>
+                <td>@branch.CountryId</td>
+                <td>@branch.Address</td>
+                <td>@branch.Phone</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@branch.Id">Edit</a> |
+                    <a asp-page="Details" asp-route-id="@branch.Id">Details</a> |
+                    <a asp-page="Delete" asp-route-id="@branch.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
