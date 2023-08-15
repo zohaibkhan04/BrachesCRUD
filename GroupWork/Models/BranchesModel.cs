@@ -13,6 +13,6 @@
         public DateTime? AddedDate { get; set; }
         public int? UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public List<Branches> branch { get; set; }
+        public List<BranchesModel> branch { get; set; }
     }
 }
